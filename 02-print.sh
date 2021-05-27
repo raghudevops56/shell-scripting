@@ -34,3 +34,4 @@ echo -e "\tThe storm, which had weakened during the afternoon,
 # CYAN          36
 
 echo -e "\e[31mHello In Red Color"
+echo -e "\e[33mHello In Yellow Color"
