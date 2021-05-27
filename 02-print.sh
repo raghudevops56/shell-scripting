@@ -33,6 +33,9 @@ echo -e "\tThe storm, which had weakened during the afternoon,
 # MAGENTA       35
 # CYAN          36
 
-echo -e "\e[31mHello In Red Color"
-echo Normal text in no color 
-echo -e "\e[33mHello In Yellow Color"
+# Syntax: echo -e "\e[CODEmMessage\e[0m"
+# 0 is color disable
+
+echo -e "\e[31mHello In Red Color\e[0m"
+echo Normal text in no color
+echo -e "\e[33mHello In Yellow Color\e[0m"
