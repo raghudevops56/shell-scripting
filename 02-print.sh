@@ -11,4 +11,4 @@ echo Hello World
 # Syntax : echo -e "line1\nline2"
 
 echo -e "Hello,\nWelcome to DevOps training"
-echo -e "Hello,\n\nWelcome to DevOps training"
+echo -e "\nHello,\n\nWelcome to DevOps training"
