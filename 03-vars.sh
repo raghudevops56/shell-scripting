@@ -17,4 +17,7 @@ ADD=$((2+3+4))
 BIG=$((10+2-3*4/5-7/8%9))
 echo BIG = $BIG
 
-## 
+##
+
+echo Variable from Command line X = $x
+
