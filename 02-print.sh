@@ -39,3 +39,5 @@ echo -e "\tThe storm, which had weakened during the afternoon,
 echo -e "\e[31mHello In Red Color\e[0m"
 echo Normal text in no color
 echo -e "\e[33mHello In Yellow Color\e[0m"
+
+## More details on Colors : https://misc.flogisoft.com/bash/tip_colors_and_formatting
