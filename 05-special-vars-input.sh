@@ -11,4 +11,8 @@ echo $2
 
 ## Like wise you can go till $n
 
+## All the arguments parsed
+
+echo $*
+echo $@
 
