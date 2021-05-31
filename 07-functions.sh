@@ -4,6 +4,7 @@
 
 SAMPLE() {
   echo Welcome to SAMPLE Function
+  return
   echo Value of a = $a
   b=20
   echo First Argument = $1
