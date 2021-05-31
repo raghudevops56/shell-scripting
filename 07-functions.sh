@@ -4,7 +4,7 @@
 
 SAMPLE() {
   echo Welcome to SAMPLE Function
-  return
+  return 5
   echo Value of a = $a
   b=20
   echo First Argument = $1
@@ -14,4 +14,5 @@ SAMPLE() {
 a=10
 SAMPLE xyz
 SAMPLE $1
+echo Exit Status of SAMPLE Function = $?
 echo Value of b = $b
