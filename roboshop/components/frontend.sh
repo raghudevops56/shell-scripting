@@ -20,3 +20,8 @@ systemctl status nginx
 echo -e "\e[1m---------------------------------------------------------------------------------"
 echo -e "\e[1;31mFAILED\e[0m"
 echo -e "\e[1m---------------------------------------------------------------------------------\e[0m"
+
+
+echo "Installing Nginx  ... "
+yum install nginx -y &>>/tmp/roboshop.log
+echo -e "\e[32mdone\e[0m"
