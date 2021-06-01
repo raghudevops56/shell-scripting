@@ -21,7 +21,7 @@ rm -rf /usr/share/nginx/html/*
 STAT $?
 
 HEAD "Extract Downloaded Content"
-unzip -d /usr/share/nginx/html /tmp/frontend.zip
+unzip -d /usr/share/nginx/html /tmp/frontend.zip &>>/tmp/roboshop.log
 STAT $?
 
 # mv frontend-main/* .
