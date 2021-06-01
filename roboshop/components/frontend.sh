@@ -22,9 +22,10 @@ STAT $?
 
 HEAD "Extract Downloaded Content"
 unzip -d /usr/share/nginx/html /tmp/frontend.zip &>>/tmp/roboshop.log
+mv /usr/share/nginx/html/frontend-main/* /usr/share/nginx/html/. &>>/tmp/roboshop.log
+mv /usr/share/nginx/html/static/* /usr/share/nginx/html/. &>>/tmp/roboshop.log
 STAT $?
 
-# mv frontend-main/* .
-# mv static/* .
+
 # rm -rf frontend-master README.md
 # mv localhost.conf /etc/nginx/default.d/roboshop.conf
