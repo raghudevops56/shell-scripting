@@ -3,11 +3,11 @@
 source components/common.sh
 rm -f /tmp/roboshop.log
 
-HEAD "Install NodeJS\t\t"
+HEAD "Install NodeJS\t\t\t"
 yum install nodejs make gcc-c++ -y &>>/tmp/roboshop.log
 STAT $?
 
-HEAD "Add RoboShop App User\t"
+HEAD "Add RoboShop App User\t\t"
 id roboshop &>>/tmp/roboshop.log
 if [ $? -eq 0 ]; then
   echo User is already there, So Skipping the User creation &>>/tmp/roboshop.log
@@ -33,7 +33,7 @@ HEAD "Fix Permissions to App Content"
 chown roboshop:roboshop /home/roboshop -R
 STAT $?
 
-HEAD "Setup SystemD Service\t"
+HEAD "Setup SystemD Service\t\t"
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/roboshop/catalogue/systemd.service  && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 STAT $?
 
