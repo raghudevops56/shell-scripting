@@ -15,14 +15,14 @@ if [ $? -eq 0 ]; then
 else
   useradd roboshop &>>/tmp/roboshop.log
   STAT $?
-fi 
+fi
 
 HEAD "Download App from GitHub"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>/tmp/roboshop.log
 STAT $?
 
 HEAD "Extract the Downloaded Archive"
-cd /home/roboshop && unzip /tmp/catalogue.zip &>>/tmp/roboshop.log && mv catalogue-main catalogue
+cd /home/roboshop && rm -rf catalogue && unzip /tmp/catalogue.zip &>>/tmp/roboshop.log && mv catalogue-main catalogue
 STAT $?
 
 HEAD "Install NodeJS Dependencies"
