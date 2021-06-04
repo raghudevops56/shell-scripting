@@ -34,16 +34,19 @@ SETUP_SYSTEMD() {
   STAT $?
 }
 
+DOWNLOAD_FROM_GITHUB() {
+  HEAD "Download App from GitHub\t"
+  curl -s -L -o /tmp/$1.zip "https://github.com/roboshop-devops-project/$1/archive/main.zip" &>>/tmp/roboshop.log
+  STAT $?
+}
+
 NODEJS() {
   HEAD "Install NodeJS\t\t\t"
   yum install nodejs make gcc-c++ -y &>>/tmp/roboshop.log
   STAT $?
 
   APP_USER_ADD
-
-  HEAD "Download App from GitHub\t"
-  curl -s -L -o /tmp/$1.zip "https://github.com/roboshop-devops-project/$1/archive/main.zip" &>>/tmp/roboshop.log
-  STAT $?
+  DOWNLOAD_FROM_GITHUB $1
 
   HEAD "Extract the Downloaded Archive"
   cd /home/roboshop && rm -rf $1 && unzip /tmp/$1.zip &>>/tmp/roboshop.log && mv $1-main $1
