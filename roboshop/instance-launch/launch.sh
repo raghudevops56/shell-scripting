@@ -32,7 +32,8 @@ INSTANCE_CREATE() {
     return 0
   fi
 
-  aws ec2 run-instances --launch-template LaunchTemplateId=${LID},Version=${LVER}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq
+  echo -n Instance ${COMPONENT} created - IPADDRESS is
+  aws ec2 run-instances --launch-template LaunchTemplateId=${LID},Version=${LVER}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq .Reservations[].Instances[].PrivateIpAddress
   sleep 10
   DNS_UPDATE
 }
